@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyLanding - Demo Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">MyLanding</div>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Trang Chủ</a></li>
+                    <li><a href="#services">Dịch Vụ</a></li>
+                    <li><a href="#about">Giới Thiệu</a></li>
+                    <li><a href="#contact">Liên hệ</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <a href="#home" class="mobile-link">Trang Chủ</a>
+        <a href="#services" class="mobile-link">Dịch Vụ</a>
+        <a href="#about" class="mobile-link">Giới Thiệu</a>
+        <a href="#contact" class="mobile-link">Liên hệ</a>
+    </div>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>Landing Page Demo</h1>
+                <p>Website giới thiệu dịch vụ đơn giản</p>
+                <a href="#contact" class="btn btn-hero">Liên hệ ngay</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2>Dịch vụ</h2>
+                <div class="card-list">
+                    <div class="card">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-paintbrush"></i>
+                        </div>
+                        <h3>Thiết kế giao diện</h3>
+                        <p class="card-desc">UI/UX đẹp mắt, hiện đại.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h3>Website responsive</h3>
+                        <p class="card-desc">Tương thích mọi thiết bị.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-circle">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3>Tối ưu trải nghiệm</h3>
+                        <p class="card-desc">Tốc độ tải trang cực nhanh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Giới thiệu</h2>
+                <div class="about-box">
+                    <p>Đây là Landing Page cơ bản sử dụng HTML, CSS và JavaScript.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Liên hệ</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Họ Tên">
+                        <span class="error-msg" id="error-name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email">
+                        <span class="error-msg" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Nội dung"></textarea>
+                        <span class="error-msg" id="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">Gửi</button>
+                    <p id="success-msg"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/NDTPhong.19112003"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://github.com/thanhphong4493"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>MyLanding Page Demo. Designed by NDTPhong.</p>
+
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

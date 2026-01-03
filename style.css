@@ -1,0 +1,388 @@
+/* === RESET & GLOBAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Font hiện đại giống thiết kế */
+    color: #333;
+    line-height: 1.6;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* === HEADER === */
+.header {
+    height: 70px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    /* Menu dính trên cùng khi cuộn */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-list a {
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #5b4ded;
+}
+
+/* Hamburger Icon (Ẩn trên Desktop) */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Mobile Menu (Ẩn mặc định) */
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: none;
+    /* JS sẽ toggle thành flex/block */
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-link {
+    color: #333;
+    font-weight: 600;
+    padding: 10px;
+}
+
+/* === HERO SECTION === */
+/* Gradient tím sang xanh giống hệt hình */
+.hero {
+    height: 400px;
+    background: linear-gradient(90deg, #9358f7 0%, #4c82f5 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.9);
+    color: #5b4ded;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-hero:hover {
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* === SERVICES === */
+.services {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.services h2,
+.about h2,
+.contact h2 {
+    margin-bottom: 40px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 cột trên desktop */
+    gap: 30px;
+}
+
+.card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: box-shadow 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Cập nhật style cho icon tròn */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #f3f0ff;
+    /* Màu nền tím rất nhạt */
+    border-radius: 50%;
+    display: flex;
+    /* Căn giữa icon */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Style cho chính cái icon bên trong */
+.icon-circle i {
+    font-size: 24px;
+    color: #5b4ded;
+    /* Màu tím chủ đạo của web */
+}
+
+/* Hiệu ứng khi hover vào card thì icon nảy lên */
+.card:hover .icon-circle {
+    transform: scale(1.1);
+    background-color: #5b4ded;
+}
+
+.card:hover .icon-circle i {
+    color: #ffffff;
+    /* Đổi màu icon thành trắng khi hover */
+}
+
+/* Style thêm text mô tả nhỏ dưới tiêu đề card cho đỡ trống */
+.card-desc {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.card h3 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* === ABOUT === */
+.about {
+    padding: 40px 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about p {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* === CONTACT === */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#contactForm {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    /* Bo góc mềm mại */
+    font-size: 14px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #5b4ded;
+}
+
+.btn-submit {
+    background-color: #5484ff;
+    /* Màu xanh nút gửi giống hình */
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #3b6bdb;
+}
+
+.error-msg {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+#success-msg {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.footer {
+    text-align: center;
+    padding: 30px;
+    background: #f9f9f9;
+    font-size: 14px;
+    color: #666;
+}
+
+/* === RESPONSIVE (MOBILE) === */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+
+    /* Ẩn menu desktop */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hiện hamburger */
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .card-list {
+        grid-template-columns: 1fr;
+        /* 1 cột trên mobile */
+    }
+
+    .card {
+        flex-direction: row;
+        /* Icon bên trái, text bên phải (tùy chọn) hoặc giữ nguyên column */
+        align-items: center;
+        text-align: left;
+        padding: 20px;
+    }
+
+    /* Nếu muốn giống hình mobile bên phải (icon trên, text dưới) thì giữ nguyên card column */
+    .card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+        /* SOCIAL ICONS Ở FOOTER */
+        .social-icons {
+            margin-bottom: 15px;
+        }
+    
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            background: #e0e0e0;
+            color: #333;
+            border-radius: 50%;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+    
+        .social-icons a:hover {
+            background: #5b4ded;
+            /* Màu chủ đạo */
+            color: #fff;
+            transform: translateY(-3px);
+        }
+}
